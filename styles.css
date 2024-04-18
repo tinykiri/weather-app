@@ -1,0 +1,286 @@
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 100;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    height: 932px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 732px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#sun {
+    width: 200px;
+    height: 200px;
+    visibility: hidden;
+    background-color: #FFDE00;
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 20px #FFDE0080,
+        0 0 0 40px #FFDE0040,
+        0 0 0 60px #FFDE0020,
+        0 0 0 80px #FFDE0010,
+        0 0 0 100px #FFDE0000,
+        0 0 40px 100px #FFDE0010;
+    animation:
+        displayDay 2s infinite linear forwards,
+        rays 2s infinite linear;
+}
+
+
+#night {
+    visibility: hidden;
+}
+
+.star {
+    position: absolute;
+    background-color: #fbf4c9;
+    box-shadow: 0 0 10px 8px #fbf4c9;
+    animation:
+        displayNight 2s infinite linear forwards,
+        raysStar 2s infinite linear;
+}
+
+.one {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    top: 160px;
+    left: 40px;
+}
+
+.two {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    top: 400px;
+    right: 70px;
+}
+
+.three {
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    top: 720px;
+    left: 88px;
+}
+
+.four {
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    top: 310px;
+    left: 197px;
+}
+
+.five {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    top: 196px;
+    right: 69px;
+}
+
+.six {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    top: 720px;
+    right: 64px;
+}
+
+.seven {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    top: 610px;
+    left: 240px;
+}
+
+.eight {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    top: 344px;
+    left: 64px;
+}
+
+.nine {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    top: 110px;
+    right: 164px;
+}
+
+.ten {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    top: 840px;
+    left: 230px;
+}
+
+.eleven {
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    top: 40px;
+    left: 150px;
+}
+
+.twelve {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    top: 540px;
+    left: 130px;
+}
+
+.thirteen {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    top: 890px;
+    left: 90px;
+}
+
+.container {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.36);
+    border-radius: 50px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.8px);
+    -webkit-backdrop-filter: blur(5.8px);
+}
+
+.input-container {
+    position: relative;
+    width: 300px;
+}
+
+.inputValue {
+    width: 300px;
+    padding: 20px;
+    padding-right: 40px; 
+    box-sizing: border-box;
+    border: none;
+    border-radius: 30px;
+    font-size: 20px;
+}
+
+.searchButton {
+    position: absolute;
+    padding-right: 60px; 
+    right: 0;
+    top: 0;
+    border: none;
+    background: transparent;
+    height: 100%;
+    width: 40px; 
+}
+
+.inputValue:focus {
+    outline: none;
+}
+
+.inputValue:focus::placeholder {
+    color: transparent;
+}
+
+.searchButton {
+    font-size: 36px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+}
+
+.searchButton:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.searchButton:active {
+    transform: scale(0.8);
+} 
+
+.displayWeather {
+    width: 200px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+.desc {
+    width: 100px;
+    font-size: 20px;
+}
+
+@keyframes displayDay {
+    0% {
+        box-shadow: none;
+    }
+}
+
+@keyframes rays {
+    0% {
+        box-shadow:
+            0 0 0 0 #FFDE0080,
+            0 0 0 20px #FFDE0080,
+            0 0 0 40px #FFDE0040,
+            0 0 0 60px #FFDE0020,
+            0 0 0 80px #FFDE0010,
+            0 0 40px 100px #FFDE0010;
+    }
+
+    100% {
+        box-shadow:
+            0 0 0 20px #FFDE0080,
+            0 0 0 40px #FFDE0040,
+            0 0 0 60px #FFDE0020,
+            0 0 0 80px #FFDE0010,
+            0 0 0 100px #FFDE0000,
+            0 0 40px 100px #FFDE0010;
+    }
+}
+
+@keyframes displayNight {
+    0% {
+        box-shadow: none;
+    }
+}
+
+@keyframes raysStar {
+    0% {
+        box-shadow: 0 0 6px 4px #fbf4c9;
+    }
+
+    50% {
+        box-shadow: 0 0 8px 6px #fbf4c9;
+    }
+
+    100% {
+        box-shadow: 0 0 6px 4px #fbf4c9;
+    }
+}
